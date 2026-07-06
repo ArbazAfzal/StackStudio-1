@@ -40,7 +40,7 @@ function Counter({
   const text = isRange ? `${prefix}${display}` : `${prefix}${display}${suffix}`;
 
   return (
-    <span ref={ref} className="text-5xl font-bold md:text-6xl lg:text-7xl" style={{ willChange: "transform" }}>
+    <span ref={ref} className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl" style={{ willChange: "transform" }}>
       {text}
     </span>
   );
@@ -48,8 +48,8 @@ function Counter({
 
 export function StatsSection() {
   return (
-    <section className="border-y border-white/10 bg-[#0a0a0a] px-6 py-20 md:py-28">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 md:grid-cols-4 md:gap-0">
+    <section className="border-y border-white/10 bg-[#0a0a0a] px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 lg:grid-cols-4 md:gap-0">
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}

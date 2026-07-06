@@ -6,7 +6,7 @@ export function MarqueeSection() {
   const items = [...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems];
 
   return (
-    <section className="overflow-hidden border-y border-white/10 bg-[#0a0a0a] py-5" aria-label="Services ticker">
+    <section className="overflow-hidden border-y border-white/10 bg-[#0a0a0a] py-5 overflow-hidden" aria-label="Services ticker">
       <div className="flex w-max animate-marquee">
         {items.map((item, i) => (
           <span key={`${item.text}-${i}`} className="mx-6 flex items-center gap-6 text-sm font-medium tracking-widest uppercase whitespace-nowrap">

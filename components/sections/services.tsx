@@ -15,7 +15,7 @@ const iconMap = {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="bg-black px-6 py-24 md:py-32">
+    <section id="services" className="bg-black px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <motion.p
           className="section-label mb-4"
@@ -27,7 +27,7 @@ export function ServicesSection() {
           — WHAT WE DO
         </motion.p>
         <motion.h2
-          className="mb-16 text-4xl font-bold md:text-5xl lg:text-6xl"
+          className="mb-16 text-4xl font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
           style={{ willChange: "transform" }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export function ServicesSection() {
           Our Core Services
         </motion.h2>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const Icon = iconMap[service.icon as keyof typeof iconMap];
             return (

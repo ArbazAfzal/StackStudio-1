@@ -42,7 +42,7 @@ export function Navbar() {
           scrollDown && !mobileOpen && "-translate-y-full",
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12">
           <Link href="#home" className="flex items-center gap-3">
             <Image
               src="/logo.png"
@@ -54,7 +54,7 @@ export function Navbar() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -74,7 +74,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="md:hidden p-2 text-white"
+            className="lg:hidden p-2 text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
@@ -89,7 +89,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl lg:hidden"
           >
             <motion.nav
               initial={{ opacity: 0, y: 40 }}

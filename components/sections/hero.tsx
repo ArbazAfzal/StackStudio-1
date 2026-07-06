@@ -34,7 +34,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black bg-grid px-6"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black bg-grid px-4 sm:px-6 md:px-8 lg:px-12"
     >
       <div ref={glowRef} className="pointer-events-none absolute inset-0 transition-[background] duration-300" />
 

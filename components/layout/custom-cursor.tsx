@@ -15,7 +15,9 @@ export function CustomCursor() {
   const y = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+    if (typeof window !== "undefined") {
+      setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+    }
   }, []);
 
   useEffect(() => {

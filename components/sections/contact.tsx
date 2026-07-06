@@ -41,30 +41,25 @@ export function ContactSection() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
-    if (!scriptUrl) {
-      setStatus("error");
-      return;
-    }
-
     setStatus("loading");
 
     try {
-      const response = await fetch(scriptUrl, {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(data),
       });
 
-      // no-cors returns opaque response; treat as success if no throw
-      if (response.type === "opaque" || response.ok) {
-        setStatus("success");
-        reset();
-        return;
+      if (!response.ok) {
+        throw new Error("Failed to submit the form");
       }
-      setStatus("error");
-    } catch {
+
+      setStatus("success");
+      reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
       setStatus("error");
     }
   };
@@ -73,7 +68,7 @@ export function ContactSection() {
     "w-full rounded-xl border border-white/10 bg-[#111111] px-4 py-3.5 text-sm text-white placeholder:text-[#888888] outline-none transition focus:border-[#C8FF00]/40 focus:ring-1 focus:ring-[#C8FF00]/20";
 
   return (
-    <section id="contact" className="bg-black px-6 py-24 md:py-32">
+    <section id="contact" className="bg-black px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <motion.p
           className="section-label mb-4"
@@ -85,14 +80,14 @@ export function ContactSection() {
           — GET IN TOUCH
         </motion.p>
 
-        <div className="grid gap-16 lg:grid-cols-2">
+        <div className="grid gap-16 flex flex-col lg:grid-cols-2">
           <motion.div
             style={{ willChange: "transform" }}
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
           >
-            <h2 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+            <h2 className="text-4xl font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               Let&apos;s Build Something{" "}
               <span className="text-[#C8FF00]">Great</span>
             </h2>

@@ -29,7 +29,7 @@ export function TestimonialsSection() {
   const items = [...testimonials, ...testimonials];
 
   return (
-    <section className="overflow-hidden bg-[#0a0a0a] px-6 py-24 md:py-32">
+    <section className="overflow-hidden bg-[#0a0a0a] px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <motion.p
           className="section-label mb-4"
@@ -41,7 +41,7 @@ export function TestimonialsSection() {
           — TESTIMONIALS
         </motion.p>
         <motion.h2
-          className="mb-16 text-4xl font-bold md:text-5xl lg:text-6xl"
+          className="mb-16 text-4xl font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
           style={{ willChange: "transform" }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,13 +53,13 @@ export function TestimonialsSection() {
 
       <div
         ref={scrollRef}
-        className="hide-scrollbar flex gap-6 overflow-x-auto px-6 pb-4"
+        className="hide-scrollbar flex gap-6 overflow-x-auto px-4 sm:px-6 md:px-8 lg:px-12 pb-4"
         style={{ scrollSnapType: "x mandatory" }}
       >
         {items.map((item, i) => (
           <article
             key={`${item.name}-${i}`}
-            className="w-[340px] shrink-0 snap-center rounded-2xl border border-white/10 bg-[#111111] p-8 md:w-[400px]"
+            className="w-full sm:w-[340px] shrink-0 snap-center rounded-2xl border border-white/10 bg-[#111111] p-8 md:w-[400px]"
           >
             <div className="mb-6 flex items-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#C8FF00]/15 text-sm font-bold text-[#C8FF00]">

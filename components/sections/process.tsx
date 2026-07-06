@@ -39,7 +39,7 @@ export function ProcessSection() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="bg-black px-6 py-24 md:py-32">
+    <section id="about" ref={sectionRef} className="bg-black px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <motion.p
           className="section-label mb-4"
@@ -51,7 +51,7 @@ export function ProcessSection() {
           — OUR PROCESS
         </motion.p>
         <motion.h2
-          className="mb-20 text-4xl font-bold md:text-5xl lg:text-6xl"
+          className="mb-20 text-4xl font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
           style={{ willChange: "transform" }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@ export function ProcessSection() {
             />
           </svg>
 
-          <div className="grid gap-12 md:grid-cols-4 md:gap-6">
+          <div className="grid gap-12 flex flex-col md:flex-row md:grid-cols-4 md:gap-6">
             {processSteps.map((step, i) => {
               const Icon = iconMap[step.icon as keyof typeof iconMap];
               return (

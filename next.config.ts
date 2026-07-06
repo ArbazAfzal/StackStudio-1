@@ -10,9 +10,18 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion"],
-  },
+   experimental: {
+     optimizePackageImports: ["lucide-react", "framer-motion"],
+     serverComponentsExternalPackages: ["google-spreadsheet", "google-auth-library", "net"],
+   },
+   webpack: (config: any) => {
+     config.externals.push({
+       net: "commonjs net",
+       tls: "commonjs tls",
+       os: "commonjs os",
+     });
+     return config;
+   },
 };
 
 export default nextConfig;

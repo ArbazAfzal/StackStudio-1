@@ -4,11 +4,11 @@ import { footerNav, socialLinks } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="relative bg-black px-6 pt-16 pb-8">
+    <footer className="relative bg-black px-4 sm:px-6 md:px-8 lg:px-12 py-16 pt-16 pb-8">
       <div className="gradient-line mb-16" />
 
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <Link href="#home" className="flex items-center gap-3">
               <Image

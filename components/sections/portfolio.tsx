@@ -7,7 +7,7 @@ import { projects } from "@/lib/projects";
 
 export function PortfolioSection() {
   return (
-    <section id="work" className="bg-[#0a0a0a] px-6 py-24 md:py-32">
+    <section id="work" className="bg-[#0a0a0a] px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <motion.p
           className="section-label mb-4"
@@ -19,7 +19,7 @@ export function PortfolioSection() {
           — OUR WORK
         </motion.p>
         <motion.h2
-          className="mb-16 text-4xl font-bold md:text-5xl lg:text-6xl"
+          className="mb-16 text-4xl font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
           style={{ willChange: "transform" }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,12 +28,12 @@ export function PortfolioSection() {
           Recent Projects
         </motion.h2>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
           {projects.map((project, i) => (
             <motion.article
               key={project.title}
               layoutId={`project-${project.title}`}
-              className={`group relative overflow-hidden rounded-2xl ${
+              className={`group relative overflow-hidden rounded-2xl w-full ${
                 i === 0 || i === 3 ? "md:row-span-1" : ""
               }`}
               style={{ minHeight: i % 2 === 0 ? 380 : 320, willChange: "transform" }}
