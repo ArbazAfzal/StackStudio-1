@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export function CustomCursor() {
-  const [isHovering, setIsHovering] = useState(false);
+  const [isHovering, setIsHovering] = useState(false); 
   const [isVisible, setIsVisible] = useState(false);
   const [isTouch, setIsTouch] = useState(true);
   const cursorX = useMotionValue(-100);
