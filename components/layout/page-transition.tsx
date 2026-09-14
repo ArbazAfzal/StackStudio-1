@@ -11,7 +11,10 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setShowOverlay(true);
-    const timer = setTimeout(() => setShowOverlay(false), 900);
+    const timer = setTimeout(() => {
+      setShowOverlay(false);
+      window.dispatchEvent(new CustomEvent("page-transition-complete"));
+    }, 900);
     return () => clearTimeout(timer);
   }, [pathname]);
 
@@ -24,13 +27,15 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
       <AnimatePresence>
         {showOverlay && (
           <motion.div
-            className="fixed inset-0 z-[9998] flex items-center justify-center bg-black"
+            className="fixed inset-0 z-[9998] flex flex-col items-center justify-center overflow-hidden bg-background"
             initial={{ y: "100%" }}
             animate={{ y: ["100%", "0%", "-100%"] }}
             transition={{ duration: 0.9, times: [0, 0.45, 1], ease: [0.76, 0, 0.24, 1] }}
             style={{ willChange: "transform" }}
           >
+            <div className="pointer-events-none absolute inset-0 accent-radial opacity-70" />
             <motion.div
+              className="relative z-10 flex flex-col items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 1, 0] }}
               transition={{ duration: 0.9, times: [0, 0.2, 0.7, 1] }}
@@ -40,8 +45,13 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
                 alt="Stack Studio"
                 width={200}
                 height={120}
-                className="h-24 w-auto object-contain invert"
+                className="h-20 w-auto object-contain invert sm:h-24"
               />
+              <div className="mt-6 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.32em] text-muted">
+                <span className="h-px w-8 bg-accent" />
+                Loading page
+                <span className="h-px w-8 bg-accent" />
+              </div>
             </motion.div>
           </motion.div>
         )}

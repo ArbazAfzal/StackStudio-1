@@ -8,12 +8,20 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
+      {
+        protocol: "https",
+        hostname: "skillicons.dev",
+      },
     ],
   },
    experimental: {
      optimizePackageImports: ["lucide-react", "framer-motion"],
-     serverComponentsExternalPackages: ["google-spreadsheet", "google-auth-library", "net"],
    },
+   serverExternalPackages: ["google-spreadsheet", "google-auth-library", "net"],
    webpack: (config: any) => {
      config.externals.push({
        net: "commonjs net",

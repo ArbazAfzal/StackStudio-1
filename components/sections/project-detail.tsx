@@ -82,7 +82,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-70`} />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16">
-          <h1 className="text-4xl font-bold md:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-bold text-white md:text-6xl lg:text-7xl">
             {title.split("").map((char, i) => (
               <motion.span
                 key={`${char}-${i}`}
@@ -103,49 +103,49 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         <div className="grid gap-16 lg:grid-cols-3">
           <div className="space-y-12 lg:col-span-2">
             <section data-animate style={{ willChange: "transform" }}>
-              <h2 className="mb-4 text-xs uppercase tracking-widest text-[#888888]">Overview</h2>
-              <p className="text-lg leading-relaxed text-white/80">{project.description}</p>
+              <h2 className="mb-4 text-xs uppercase tracking-widest text-muted">Overview</h2>
+              <p className="text-lg leading-relaxed text-foreground/80">{project.description}</p>
             </section>
 
             <section data-animate style={{ willChange: "transform" }}>
-              <h2 className="mb-4 text-xs uppercase tracking-widest text-[#888888]">The Challenge</h2>
-              <p className="leading-relaxed text-white/70">{project.challenge}</p>
+              <h2 className="mb-4 text-xs uppercase tracking-widest text-muted">The Challenge</h2>
+              <p className="leading-relaxed text-foreground/70">{project.challenge}</p>
             </section>
 
             <section data-animate style={{ willChange: "transform" }}>
-              <h2 className="mb-4 text-xs uppercase tracking-widest text-[#888888]">The Solution</h2>
-              <p className="leading-relaxed text-white/70">{project.solution}</p>
+              <h2 className="mb-4 text-xs uppercase tracking-widest text-muted">The Solution</h2>
+              <p className="leading-relaxed text-foreground/70">{project.solution}</p>
             </section>
           </div>
 
           <aside className="lg:col-span-1">
-            <div
-              data-animate
-              className="sticky top-28 rounded-2xl border border-white/10 bg-[#111111] p-8"
-              style={{ willChange: "transform" }}
-            >
-              <div className="mb-6">
-                <p className="text-xs uppercase tracking-widest text-[#888888]">Category</p>
-                <p className="mt-1 font-medium">{project.category}</p>
-              </div>
-              <div className="mb-6">
-                <p className="text-xs uppercase tracking-widest text-[#888888]">Year</p>
-                <p className="mt-1 font-medium">{project.year}</p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-[#888888]">Tech Stack</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {project.tech.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/20 px-3 py-1 text-xs text-white/70"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              <div
+                data-animate
+                className="sticky top-28 rounded-2xl border border-border bg-surface p-8"
+                style={{ willChange: "transform" }}
+              >
+                <div className="mb-6">
+                  <p className="text-xs uppercase tracking-widest text-muted">Category</p>
+                  <p className="mt-1 font-medium">{project.category}</p>
+                </div>
+                <div className="mb-6">
+                  <p className="text-xs uppercase tracking-widest text-muted">Year</p>
+                  <p className="mt-1 font-medium">{project.year}</p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-muted">Tech Stack</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {project.tech.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-border px-3 py-1 text-xs text-foreground/70"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
           </aside>
         </div>
 
@@ -165,13 +165,13 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
             <div className={`absolute inset-0 bg-gradient-to-br ${nextProject.gradient} opacity-60 transition-opacity duration-500 group-hover:opacity-80`} />
             <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/60" />
             <div className="relative z-10">
-              <p className="text-sm text-[#C8FF00]">Up Next →</p>
-              <h3 className="mt-2 text-3xl font-bold md:text-4xl">{nextProject.title}</h3>
+              <p className="text-sm text-accent">Up Next →</p>
+              <h3 className="mt-2 text-3xl font-bold text-white md:text-4xl">{nextProject.title}</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {nextProject.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-white/20 px-3 py-1 text-xs text-white/70"
+                    className="rounded-full border border-white/20 px-3 py-1 text-xs text-white/80"
                   >
                     {tag}
                   </span>

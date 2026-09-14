@@ -80,6 +80,7 @@ export function Preloader() {
 
       tl.eventCallback("onComplete", () => {
         document.body.style.overflow = "";
+        document.documentElement.dataset.preloaderComplete = "true";
         window.dispatchEvent(new CustomEvent("preloader-complete"));
         setVisible(false);
       });
@@ -119,7 +120,7 @@ export function Preloader() {
             className="absolute top-0 left-0 h-full w-0 overflow-hidden"
             style={{ willChange: "transform" }}
           >
-            <div className="h-full w-[280px] bg-[#b4f400]" />
+            <div className="h-full w-[280px] bg-accent" />
             <div
               ref={lineOverlayRef}
               className="absolute top-0 right-0 h-full bg-black"
@@ -136,7 +137,7 @@ export function Preloader() {
           >
             0
           </span>
-          <span className="ml-1 text-[32px] font-bold text-[#b4f400]">%</span>
+          <span className="ml-1 text-[32px] font-bold text-accent">%</span>
         </div>
       </div>
     </div>

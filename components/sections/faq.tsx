@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import { Plus } from "lucide-react";
 import Link from "next/link";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { faqContent } from "@/lib/data";
@@ -16,7 +16,7 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="bg-black px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section id="faq" className="bg-background px-4 sm:px-6 md:px-8 lg:px-12 py-8 md:py-10 lg:py-12 overflow-hidden">
       <div className="mx-auto max-w-7xl grid gap-16 lg:grid-cols-2">
         {/* Left Side: Sticky Heading + CTA */}
         <div className="lg:sticky lg:top-24 lg:h-fit">
@@ -56,9 +56,9 @@ export function FAQSection() {
           >
             <MagneticButton>
               <Link
-                href="#contact"
+                href="/contact"
                 data-cursor="hover"
-                className="group rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-black transition-transform hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(200,255,0,0.4)]"
+                className="group rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] hover:shadow-[0_0_30px_var(--accent-glow)]"
               >
                 Contact Us →
               </Link>
@@ -68,7 +68,7 @@ export function FAQSection() {
 
         {/* Right Side: Accordion List */}
         <div>
-          <ul className="divide-y divide-white/10">
+          <ul className="divide-y divide-border">
             {faqContent.map((item, index) => (
               <motion.li
                 key={index}
@@ -79,7 +79,7 @@ export function FAQSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <button
-                  className="flex w-full items-center justify-between text-left text-lg font-medium transition-colors hover:text-white"
+                  className="flex w-full items-center justify-between text-left text-lg font-medium transition-colors hover:text-foreground"
                   onClick={() => toggleAccordion(index)}
                   data-cursor="hover"
                 >
@@ -90,7 +90,7 @@ export function FAQSection() {
                     animate={{ rotate: openIndex === index ? 45 : 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Plus size={24} className="text-white/70" />
+                    <Plus size={24} className="text-foreground/70" />
                   </motion.div>
                 </button>
                 <AnimatePresence>

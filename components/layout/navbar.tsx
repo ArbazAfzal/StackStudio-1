@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,19 +38,19 @@ export function Navbar() {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          "backdrop-blur-md bg-black/30 border-b border-white/10",
-          scrolled ? "py-3" : "py-5",
+          "backdrop-blur-md bg-background/70 border-b border-border",
+          scrolled ? "py-1.5" : "py-2.5",
           scrollDown && !mobileOpen && "-translate-y-full",
         )}
       >
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12">
-          <Link href="#home" className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12">
+          <Link href="/" className="flex items-center gap-3" aria-label="Stack Studio home">
             <Image
               src="/logo.png"
               alt="Stack Studio"
-              width={160}
-              height={80}
-              className="h-10 w-auto object-contain invert"
+              width={240}
+              height={120}
+              className="h-14 w-auto object-contain dark:invert"
               priority
             />
           </Link>
@@ -59,27 +60,31 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-white/70 hover:text-white transition-colors"
+                className="text-sm text-foreground/70 hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
             ))}
+            <ThemeToggle />
             <Link
-              href="#contact"
-              className="rounded-full bg-[#C8FF00] px-5 py-2 text-sm font-semibold text-black transition-transform hover:scale-105 hover:shadow-[0_0_20px_rgba(200,255,0,0.4)]"
+              href="/contact"
+              className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white transition-transform hover:scale-105 hover:shadow-[0_0_20px_var(--accent-glow)]"
             >
               Get a Quote
             </Link>
           </nav>
 
-          <button
-            type="button"
-            className="lg:hidden p-2 text-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="p-2 text-foreground"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -89,7 +94,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl lg:hidden"
           >
             <motion.nav
               initial={{ opacity: 0, y: 40 }}
@@ -108,12 +113,25 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-3xl font-semibold text-white/90 hover:text-[#C8FF00] transition-colors"
+                    className="text-3xl font-semibold text-foreground/90 hover:text-accent transition-colors"
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + navLinks.length * 0.05 }}
+              >
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-full bg-accent px-8 py-3 text-lg font-semibold text-white"
+                >
+                  Get a Quote
+                </Link>
+              </motion.div>
             </motion.nav>
           </motion.div>
         )}

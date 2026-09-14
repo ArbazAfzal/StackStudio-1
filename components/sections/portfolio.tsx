@@ -7,7 +7,7 @@ import { projects } from "@/lib/projects";
 
 export function PortfolioSection() {
   return (
-    <section id="work" className="bg-[#0a0a0a] px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
+    <section id="work" className="bg-bg-secondary px-4 sm:px-6 md:px-8 lg:px-12 py-8 md:py-10 lg:py-12">
       <div className="mx-auto max-w-7xl">
         <motion.p
           className="section-label mb-4"
@@ -19,7 +19,7 @@ export function PortfolioSection() {
           — OUR WORK
         </motion.p>
         <motion.h2
-          className="mb-16 text-4xl font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+          className="mb-8 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl"
           style={{ willChange: "transform" }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,12 +53,12 @@ export function PortfolioSection() {
               <div className="absolute inset-0 bg-black/20 transition-colors duration-500 group-hover:bg-black/60" />
               <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <div className="translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
-                  <h3 className="text-2xl font-bold md:text-3xl">{project.title}</h3>
+                  <h3 className="text-2xl font-bold text-white md:text-3xl">{project.title}</h3>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-white/20 px-3 py-1 text-xs text-white/70"
+                        className="rounded-full border border-white/20 px-3 py-1 text-xs text-white/80"
                       >
                         {tag}
                       </span>
@@ -66,7 +66,7 @@ export function PortfolioSection() {
                   </div>
                   <Link
                     href={`/work/${project.slug}`}
-                    className="mt-4 inline-block text-sm font-medium text-[#C8FF00] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    className="mt-4 inline-block text-sm font-medium text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   >
                     View Project →
                   </Link>

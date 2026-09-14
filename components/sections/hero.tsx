@@ -6,8 +6,8 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 
 const headlineLines = [
-  ["We", "Build", "Digital"],
-  ["Products", "That", "Scale"],
+  ["We Build & Scale", "Software That"],
+  ["Moves Your", "Business Forward"],
 ];
 
 export function HeroSection() {
@@ -17,7 +17,16 @@ export function HeroSection() {
   useEffect(() => {
     const onComplete = () => setReady(true);
     window.addEventListener("preloader-complete", onComplete);
-    return () => window.removeEventListener("preloader-complete", onComplete);
+    window.addEventListener("page-transition-complete", onComplete);
+
+    if (document.documentElement.dataset.preloaderComplete === "true") {
+      setReady(true);
+    }
+
+    return () => {
+      window.removeEventListener("preloader-complete", onComplete);
+      window.removeEventListener("page-transition-complete", onComplete);
+    };
   }, []);
 
   useEffect(() => {
@@ -25,7 +34,7 @@ export function HeroSection() {
       if (!glowRef.current) return;
       const x = (e.clientX / window.innerWidth) * 100;
       const y = (e.clientY / window.innerHeight) * 100;
-      glowRef.current.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(200,255,0,0.06) 0%, transparent 50%)`;
+      glowRef.current.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(108,75,255,0.10) 0%, transparent 50%)`;
     };
     window.addEventListener("mousemove", move, { passive: true });
     return () => window.removeEventListener("mousemove", move);
@@ -34,8 +43,9 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-black bg-grid px-4 sm:px-6 md:px-8 lg:px-12"
+      className="relative flex min-h-[78vh] flex-col items-center justify-center overflow-hidden bg-background py-20 bg-grid px-4 sm:px-6 md:px-8 lg:px-12"
     >
+      <div className="pointer-events-none absolute inset-0 accent-radial" />
       <div ref={glowRef} className="pointer-events-none absolute inset-0 transition-[background] duration-300" />
 
       <div className="relative z-10 mx-auto max-w-5xl text-center">
@@ -63,13 +73,17 @@ export function HeroSection() {
         </h1>
 
         <motion.p
-          className="mx-auto mt-8 max-w-xl text-base text-[#888888] md:text-lg"
+          className="mx-auto mt-8 max-w-2xl text-base text-muted md:text-lg"
           style={{ willChange: "transform" }}
           initial={{ opacity: 0, y: 20 }}
           animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          Next-gen web, mobile &amp; AI solutions — delivered in days, not months.
+          From <span className="text-foreground font-medium">Full Stack</span> and{" "}
+          <span className="text-foreground font-medium">MERN</span> apps to{" "}
+          <span className="text-foreground font-medium">AI Agents</span>,{" "}
+          <span className="text-foreground font-medium">SaaS</span> platforms, and
+          WordPress / Shopify / Wix builds — engineered to scale.
         </motion.p>
 
         <motion.div
@@ -80,14 +94,14 @@ export function HeroSection() {
           transition={{ delay: 1.1, duration: 0.6 }}
         >
           <Link
-            href="#contact"
-            className="group rounded-full bg-[#C8FF00] px-8 py-3.5 text-sm font-semibold text-black transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(200,255,0,0.4)]"
+            href="/contact"
+            className="group rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-[0_0_30px_var(--accent-glow)]"
           >
             Get a Free Quote →
           </Link>
           <Link
-            href="#work"
-            className="rounded-full border border-white/20 px-8 py-3.5 text-sm font-medium text-white transition-all hover:border-[#C8FF00]/50 hover:text-[#C8FF00]"
+            href="/work"
+            className="rounded-full border border-border px-8 py-3.5 text-sm font-medium text-foreground transition-all hover:border-accent/50 hover:text-accent"
           >
             See Our Work
           </Link>
@@ -101,7 +115,7 @@ export function HeroSection() {
         transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
         aria-hidden
       >
-        <ChevronDown className="h-6 w-6 text-white/40" />
+        <ChevronDown className="h-6 w-6 text-foreground/40" />
       </motion.div>
     </section>
   );

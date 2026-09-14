@@ -39,7 +39,7 @@ export function ProcessSection() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="bg-black px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
+    <section id="about" ref={sectionRef} className="bg-background px-4 sm:px-6 md:px-8 lg:px-12 py-8 md:py-10 lg:py-12">
       <div className="mx-auto max-w-7xl">
         <motion.p
           className="section-label mb-4"
@@ -51,7 +51,7 @@ export function ProcessSection() {
           — OUR PROCESS
         </motion.p>
         <motion.h2
-          className="mb-20 text-4xl font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+          className="mb-8 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl"
           style={{ willChange: "transform" }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,17 +66,18 @@ export function ProcessSection() {
             preserveAspectRatio="none"
             aria-hidden
           >
-            <line
-              ref={lineRef}
-              x1="12.5%"
-              y1="0"
-              x2="87.5%"
-              y2="0"
-              stroke="#C8FF00"
-              strokeWidth="1"
-              strokeDasharray="1000"
-              strokeOpacity="0.4"
-            />
+              <line
+                ref={lineRef}
+                x1="12.5%"
+                y1="0"
+                x2="87.5%"
+                y2="0"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeDasharray="1000"
+                strokeOpacity="0.4"
+                className="text-accent"
+              />
           </svg>
 
           <div className="grid gap-12 flex flex-col md:flex-row md:grid-cols-4 md:gap-6">
@@ -92,15 +93,15 @@ export function ProcessSection() {
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ delay: i * 0.12 }}
                 >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-[#C8FF00]/30 bg-[#C8FF00]/10 text-[#C8FF00]">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
                     <Icon size={20} />
                   </div>
-                  <span className="mb-2 text-xs tracking-widest text-[#C8FF00]">{step.step}</span>
+                  <span className="mb-2 text-xs tracking-widest text-accent">{step.step}</span>
                   <h3 className="mb-2 text-lg font-semibold">{step.title}</h3>
-                  <p className="text-sm text-[#888888]">{step.description}</p>
+                  <p className="text-sm text-muted">{step.description}</p>
 
                   {i < processSteps.length - 1 && (
-                    <div className="absolute top-6 left-6 h-full w-px bg-white/10 md:hidden" />
+                    <div className="absolute top-6 left-6 h-full w-px bg-border md:hidden" />
                   )}
                 </motion.div>
               );

@@ -14,16 +14,16 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "64px",
-          background: "#000000",
+          background: "#0A0A0F",
           color: "white",
         }}
       >
-        <div style={{ fontSize: 20, letterSpacing: 8, color: "#C8FF00" }}>STACK STUDIO</div>
-        <div style={{ marginTop: 24, fontSize: 64, fontWeight: 700, maxWidth: 900, lineHeight: 1.1 }}>
-          We Build Digital Products That Scale
+        <div style={{ fontSize: 20, letterSpacing: 8, color: "#6C4BFF" }}>STACK STUDIO</div>
+        <div style={{ marginTop: 24, fontSize: 60, fontWeight: 700, maxWidth: 960, lineHeight: 1.1 }}>
+          We Build &amp; Scale Software That Moves Your Business Forward
         </div>
-        <div style={{ marginTop: 20, fontSize: 24, color: "#888888" }}>
-          Next-gen web, mobile & AI solutions
+        <div style={{ marginTop: 20, fontSize: 24, color: "#22D3EE" }}>
+          Full Stack · MERN · AI Agents · SaaS
         </div>
       </div>
     ),

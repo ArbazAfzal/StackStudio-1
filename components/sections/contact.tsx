@@ -9,12 +9,14 @@ import { contactSchema, type ContactFormData } from "@/lib/schema";
 import { socialLinks } from "@/lib/data";
 
 const serviceOptions = [
-  "Web Development",
-  "Mobile App",
-  "AI Integration",
-  "SaaS Platform",
-  "UI/UX Design",
-  "Other",
+  "Full Stack Development",
+  "MERN Stack Development",
+  "AI Model Integration",
+  "AI Agent Creation",
+  "SaaS-Based Project Development",
+  "WordPress Development",
+  "Shopify Development",
+  "Wix Studio Development",
 ];
 
 const budgetOptions = ["<$500", "$500–$2k", "$2k–$5k", "$5k+"];
@@ -65,10 +67,10 @@ export function ContactSection() {
   };
 
   const inputClass =
-    "w-full rounded-xl border border-white/10 bg-[#111111] px-4 py-3.5 text-sm text-white placeholder:text-[#888888] outline-none transition focus:border-[#C8FF00]/40 focus:ring-1 focus:ring-[#C8FF00]/20";
+    "w-full rounded-xl border border-border bg-surface px-4 py-3.5 text-sm text-foreground placeholder:text-muted outline-none transition focus:border-accent/40 focus:ring-1 focus:ring-accent/20";
 
   return (
-    <section id="contact" className="bg-black px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
+    <section id="contact" className="bg-background px-4 sm:px-6 md:px-8 lg:px-12 py-8 md:py-10 lg:py-12">
       <div className="mx-auto max-w-7xl">
         <motion.p
           className="section-label mb-4"
@@ -87,36 +89,36 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
           >
-            <h2 className="text-4xl font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              Let&apos;s Build Something{" "}
-              <span className="text-[#C8FF00]">Great</span>
-            </h2>
-            <p className="mt-6 max-w-md text-[#888888]">
-              Tell us about your project. We typically respond within 24 hours with a
-              tailored proposal and timeline.
-            </p>
+              <h2 className="text-4xl font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                Let&apos;s Build Something{" "}
+                <span className="text-accent">Great</span>
+              </h2>
+              <p className="mt-6 max-w-md text-muted">
+                Tell us about your project. We typically respond within 24 hours with a
+                tailored proposal and timeline.
+              </p>
 
-            <div className="mt-10 space-y-3">
-              <a
-                href="mailto:hello@stackstudio.dev"
-                className="block text-white/80 hover:text-[#C8FF00] transition-colors"
-              >
-                hello@stackstudio.dev
-              </a>
-              <div className="flex gap-4 pt-2">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-[#888888] hover:text-[#C8FF00] transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+              <div className="mt-10 space-y-3">
+                <a
+                  href="mailto:hello@stackstudio.org"
+                  className="block text-foreground/80 hover:text-accent transition-colors"
+                >
+                  hello@stackstudio.org
+                </a>
+                <div className="flex gap-4 pt-2">
+                  {socialLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted hover:text-accent transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
           </motion.div>
 
           <motion.form
@@ -148,7 +150,7 @@ export function ContactSection() {
                     Service Interested In *
                   </option>
                   {serviceOptions.map((opt) => (
-                    <option key={opt} value={opt} className="bg-black">
+                    <option key={opt} value={opt} className="bg-surface">
                       {opt}
                     </option>
                   ))}
@@ -161,7 +163,7 @@ export function ContactSection() {
                     Project Budget *
                   </option>
                   {budgetOptions.map((opt) => (
-                    <option key={opt} value={opt} className="bg-black">
+                    <option key={opt} value={opt} className="bg-surface">
                       {opt}
                     </option>
                   ))}
@@ -181,11 +183,11 @@ export function ContactSection() {
             </motion.div>
 
             <motion.div custom={5} variants={fieldVariants}>
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#C8FF00] px-8 py-4 text-sm font-semibold text-black transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(200,255,0,0.4)] disabled:opacity-60"
-              >
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold text-white transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_var(--accent-glow)] disabled:opacity-60"
+                >
                 {status === "loading" ? (
                   <>
                     <Loader2 className="h-4 w-4 animate-spin" />
@@ -201,7 +203,7 @@ export function ContactSection() {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center text-sm text-[#C8FF00]"
+                className="text-center text-sm text-accent"
               >
                 ✓ Message sent! We&apos;ll reply within 24 hours.
               </motion.p>

@@ -1,58 +1,124 @@
+import { SITE_EMAIL, SOCIAL_LINKS } from "@/lib/site";
+
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Work", href: "/work" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Process", href: "/process" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const marqueeItems = [
-  { text: "WEB DEVELOPMENT", accent: false },
-  { text: "MOBILE APPS", accent: true },
-  { text: "AI SOLUTIONS", accent: false },
-  { text: "SaaS PLATFORMS", accent: true },
-  { text: "UI/UX DESIGN", accent: false },
+  { text: "FULL STACK DEVELOPMENT", accent: true },
+  { text: "MERN STACK", accent: false },
+  { text: "AI MODEL INTEGRATION", accent: true },
+  { text: "AI AGENT CREATION", accent: false },
+  { text: "SAAS PLATFORMS", accent: true },
+  { text: "WORDPRESS", accent: false },
+  { text: "SHOPIFY", accent: true },
+  { text: "WIX STUDIO", accent: false },
   { text: "NEXT.JS", accent: true },
-  { text: "REACT NATIVE", accent: false },
+  { text: "REACT & NODE", accent: false },
 ];
 
 export const services = [
   {
-    title: "Web Development",
-    description: "Blazing-fast websites & web apps built with Next.js and React",
-    icon: "globe",
-  },
-  {
-    title: "Mobile Apps",
-    description: "Cross-platform iOS & Android apps with React Native",
-    icon: "smartphone",
-  },
-  {
-    title: "AI Integration",
-    description: "Custom AI features, chatbots & automation pipelines",
-    icon: "brain",
-  },
-  {
-    title: "SaaS Platforms",
-    description: "End-to-end SaaS products from MVP to scale",
+    title: "Full Stack Development",
+    slug: "full-stack-development",
     icon: "layers",
+    description:
+      "End-to-end web applications built with modern frameworks — frontend, backend, database, and deployment handled together.",
+    image: {
+      src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80&auto=format&fit=crop",
+      alt: "Full-stack developer writing frontend and backend code on a laptop",
+    },
   },
   {
-    title: "UI/UX Design",
-    description: "Pixel-perfect, user-centered interfaces",
-    icon: "palette",
+    title: "MERN Stack Development",
+    slug: "mern-stack-development",
+    icon: "database",
+    description:
+      "MongoDB, Express, React, and Node.js apps engineered for speed, scalability, and clean architecture.",
+    image: {
+      src: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&q=80&auto=format&fit=crop",
+      alt: "React and Node.js MERN stack application code on a monitor",
+    },
   },
   {
-    title: "API & Backend",
-    description: "Scalable Node.js, Python APIs & microservices",
-    icon: "server",
+    title: "AI Model Integration",
+    slug: "ai-model-integration",
+    icon: "brainCircuit",
+    description:
+      "We plug LLMs, embeddings, and vision models into your product with reliable, production-grade pipelines.",
+    image: {
+      src: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80&auto=format&fit=crop",
+      alt: "Artificial intelligence model visualization representing LLM integration",
+    },
+  },
+  {
+    title: "AI Agent Creation",
+    slug: "ai-agent-creation",
+    icon: "bot",
+    description:
+      "Custom autonomous agents that orchestrate tools, APIs, and workflows to automate real business processes.",
+    image: {
+      src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80&auto=format&fit=crop",
+      alt: "Humanoid robot illustrating custom AI agents that automate workflows",
+    },
+  },
+  {
+    title: "SaaS-Based Project Development",
+    slug: "saas-development",
+    icon: "cloud",
+    description:
+      "Multi-tenant SaaS products with auth, billing, dashboards, and admin panels — from MVP to scale.",
+    image: {
+      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop",
+      alt: "SaaS analytics dashboard with charts and subscription metrics",
+    },
+  },
+  {
+    title: "WordPress Development",
+    slug: "wordpress-development",
+    icon: "layoutTemplate",
+    description:
+      "Fast, SEO-ready WordPress sites and WooCommerce stores built on custom themes and optimized for Core Web Vitals.",
+    image: {
+      src: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=1200&q=80&auto=format&fit=crop",
+      alt: "Content editor working on a WordPress website and blog layout",
+    },
+  },
+  {
+    title: "Shopify Development",
+    slug: "shopify-development",
+    icon: "shoppingBag",
+    description:
+      "Conversion-focused Shopify stores with custom themes, app integrations, and optimized checkout flows.",
+    image: {
+      src: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop",
+      alt: "Online store checkout and shopping bags representing Shopify e-commerce",
+    },
+  },
+  {
+    title: "Wix Studio Development",
+    slug: "wix-studio-development",
+    icon: "penTool",
+    description:
+      "Design-led Wix Studio sites with custom interactions, CMS structure, and smooth responsive layouts.",
+    image: {
+      src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80&auto=format&fit=crop",
+      alt: "Designer crafting a visual website layout in a studio workspace",
+    },
   },
 ];
 
 export const stats = [
   { value: 50, suffix: "+", label: "Projects Delivered" },
   { value: 30, suffix: "+", label: "Happy Clients" },
-  { value: 5, prefix: "3–", suffix: "", label: "Days Avg Delivery" },
+  { value: 5, prefix: "3–", suffix: "", label: "Days Avg. Delivery" },
   { value: 100, suffix: "%", label: "Client Satisfaction" },
 ];
 
@@ -60,138 +126,167 @@ export const processSteps = [
   {
     step: "01",
     title: "Discovery Call",
-    description: "We understand your goals",
+    description: "We learn your goals, scope, and success metrics.",
     icon: "search",
   },
   {
     step: "02",
-    title: "Design & Plan",
-    description: "Wireframes + tech blueprint",
+    title: "Proposal & Planning",
+    description: "Wireframes, tech blueprint, and a fixed timeline.",
     icon: "pen",
   },
   {
     step: "03",
-    title: "Build & Test",
-    description: "Development with daily updates",
+    title: "Build & Iterate",
+    description: "Development with daily updates and quick revisions.",
     icon: "code",
   },
   {
     step: "04",
     title: "Launch & Support",
-    description: "Deploy + post-launch care",
+    description: "Deployment plus post-launch care and monitoring.",
     icon: "rocket",
   },
 ];
 
-export const projects = [
-  {
-    title: "NovaPay Fintech",
-    tags: ["Next.js", "Node.js", "Stripe"],
-    gradient: "from-[#1a1a1a] via-[#0d1a00] to-[#000000]",
-  },
-  {
-    title: "Pulse Health App",
-    tags: ["React Native", "Firebase"],
-    gradient: "from-[#111111] via-[#1a1500] to-[#000000]",
-  },
-  {
-    title: "Vertex AI Dashboard",
-    tags: ["Next.js", "OpenAI", "Python"],
-    gradient: "from-[#0a0a0a] via-[#0f1a0a] to-[#000000]",
-  },
-  {
-    title: "Orbit SaaS Platform",
-    tags: ["Next.js", "PostgreSQL", "AWS"],
-    gradient: "from-[#111111] via-[#151500] to-[#000000]",
-  },
-];
-
 export const whyUsPoints = [
-  "Fast delivery — 3 to 5 days",
-  "Fixed price, no surprises",
-  "Direct communication, no middlemen",
-  "Post-launch support included",
-  "Built with modern, scalable tech",
-  "NDA-ready, privacy first",
+  "Fast delivery — typically 3 to 10 days",
+  "Fixed, transparent pricing — no surprises",
+  "Direct communication — talk to the builders",
+  "Modern, scalable tech stack by default",
+  "NDA-ready and privacy-first by default",
+  "Post-launch support included with every build",
 ];
 
 export const testimonials = [
   {
     quote:
-      "Stack Studio delivered our MVP in 4 days. The quality exceeded what agencies quoted us 6 weeks for.",
+      "Stack Studio delivered our MVP in 4 days. The quality exceeded what other agencies quoted us 6 weeks for.",
     name: "Sarah Chen",
     role: "Founder",
-    company: "NovaPay",
+    company: "Placeholder Co.",
     initials: "SC",
   },
   {
     quote:
-      "Incredible attention to detail. Our conversion rate jumped 40% after the redesign.",
+      "Incredible attention to detail. Our conversion rate jumped after the redesign and the handoff was seamless.",
     name: "Marcus Webb",
     role: "CEO",
-    company: "Pulse Health",
+    company: "Placeholder Inc.",
     initials: "MW",
   },
   {
     quote:
-      "The AI integration they built saved our team 20 hours a week. Highly recommend.",
+      "The AI integration they built saved our team 20 hours a week. Highly recommend working with them.",
     name: "Elena Rodriguez",
     role: "CTO",
-    company: "Vertex Labs",
+    company: "Placeholder Labs",
     initials: "ER",
   },
   {
     quote:
-      "Professional, fast, and transparent. Best dev partner we've worked with.",
+      "Professional, fast, and transparent. The best development partner we have worked with to date.",
     name: "James Okonkwo",
     role: "Product Lead",
-    company: "Orbit SaaS",
+    company: "Placeholder SaaS",
     initials: "JO",
   },
 ];
 
 export const footerNav = {
   navigation: [
-    { label: "Home", href: "#home" },
-    { label: "Services", href: "#services" },
-    { label: "Work", href: "#work" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Work", href: "/work" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: "Web Development", href: "#services" },
-    { label: "Mobile Apps", href: "#services" },
-    { label: "AI Solutions", href: "#services" },
-    { label: "SaaS Platforms", href: "#services" },
+    { label: "Full Stack Development", href: "/services/full-stack-development" },
+    { label: "MERN Stack Development", href: "/services/mern-stack-development" },
+    { label: "AI Agent Creation", href: "/services/ai-agent-creation" },
+    { label: "SaaS Development", href: "/services/saas-development" },
+    { label: "Shopify Development", href: "/services/shopify-development" },
+    { label: "WordPress Development", href: "/services/wordpress-development" },
+  ],
+  company: [
+    { label: "About Us", href: "/about" },
+    { label: "Our Work", href: "/work" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Contact", href: "/contact" },
   ],
   connect: [
-    { label: "hello@stackstudio.dev", href: "mailto:hello@stackstudio.dev" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "GitHub", href: "https://github.com" },
+    { label: SITE_EMAIL, href: `mailto:${SITE_EMAIL}` },
+    { label: "LinkedIn", href: SOCIAL_LINKS.linkedin },
+    { label: "GitHub", href: SOCIAL_LINKS.github },
+    { label: "Twitter / X", href: SOCIAL_LINKS.twitter },
+  ],
+  resources: [
+    { label: "Features", href: "/features" },
+    { label: "Platform", href: "/platform" },
+    { label: "Integrations", href: "/integrations" },
+    { label: "Process", href: "/process" },
+    { label: "Blog", href: "/blog" },
+    { label: "FAQ", href: "/faq" },
   ],
 };
 
 export const socialLinks = [
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "GitHub", href: "https://github.com" },
-  { label: "Twitter", href: "https://twitter.com" },
-  { label: "Instagram", href: "https://instagram.com" },
+  { label: "LinkedIn", href: SOCIAL_LINKS.linkedin },
+  { label: "GitHub", href: SOCIAL_LINKS.github },
+  { label: "Twitter", href: SOCIAL_LINKS.twitter },
+  { label: "Instagram", href: SOCIAL_LINKS.instagram },
 ];
 
 export const servicesDetails = [
   {
-    title: "MERN Stack Development",
-    mainIcon: "Code",
-    tagline: "Full-stack JavaScript, end to end",
-    description: "We build complete web applications using MongoDB, Express, React, and Node.js. From REST APIs to real-time dashboards, we deliver robust, scalable full-stack solutions that grow with your business. Every project is built with clean architecture and production-grade code quality.",
+    title: "Full Stack Development",
+    slug: "full-stack-development",
+    mainIcon: "Layers",
+    tagline: "One team for frontend, backend & everything between",
+    description:
+      "We design and build complete web applications where the interface, API, database, and infrastructure are engineered as a single coherent system. You get a fast, reliable product without the overhead of coordinating multiple vendors — and a clean codebase your team can own and extend.",
     deliverables: [
-      "Custom React frontend with reusable component library",
+      "Responsive frontend with a reusable component library",
+      "REST or GraphQL API built on Node.js / Next.js",
+      "Relational or NoSQL database design and indexing",
+      "Authentication, roles, and secure session handling",
+      "CI/CD pipeline with automated testing",
+      "Cloud deployment (Vercel, AWS, or Railway)",
+      "Full source code and documentation handoff",
+      "30 days of post-launch support",
+    ],
+    useCases: ["Web Apps", "Internal Tools", "Customer Portals"],
+    techStack: [
+      { name: "Next.js", icon: "Code" },
+      { name: "TypeScript", icon: "Code" },
+      { name: "Node.js", icon: "Server" },
+      { name: "PostgreSQL", icon: "Database" },
+      { name: "Prisma", icon: "Database" },
+      { name: "Tailwind", icon: "Brush" },
+      { name: "Vercel", icon: "Cloud" },
+      { name: "GitHub Actions", icon: "GitBranch" },
+    ],
+    deliveryTime: "7–14 Business Days",
+    budget: "$1,000 – $6,000",
+  },
+  {
+    title: "MERN Stack Development",
+    slug: "mern-stack-development",
+    mainIcon: "Database",
+    tagline: "Full-stack JavaScript, end to end",
+    description:
+      "We build robust applications with MongoDB, Express, React, and Node.js. From REST APIs to real-time dashboards, MERN lets us move fast while keeping the architecture clean and easy to scale as your user base grows.",
+    deliverables: [
+      "React frontend with a reusable component library",
       "Node.js + Express REST API or GraphQL backend",
-      "MongoDB database design and optimization",
+      "MongoDB schema design and performance tuning",
       "JWT authentication and role-based access control",
-      "Real-time features with Socket.io if needed",
+      "Real-time features with Socket.io where needed",
       "Deployment on Vercel, Railway, or AWS",
-      "Full source code + documentation handoff",
-      "30 days post-launch support",
+      "Full source code and documentation handoff",
+      "30 days of post-launch support",
     ],
     useCases: ["SaaS MVPs", "Internal Tools", "Customer Portals"],
     techStack: [
@@ -201,55 +296,90 @@ export const servicesDetails = [
       { name: "Express", icon: "Cloud" },
       { name: "Socket.io", icon: "Network" },
       { name: "JWT", icon: "Shield" },
-      { name: "Vercel", icon: "Aperture" },
-      { name: "Tailwind", icon: "Brush" },
-    ],
-    deliveryTime: "5–10 Business Days",
-    budget: "$800 – $5,000",
-  },
-  {
-    title: "Vibe Coding",
-    mainIcon: "Sparkles",
-    tagline: "AI-assisted development at warp speed",
-    description: "Vibe coding is our AI-accelerated development process where we use tools like Cursor AI, GitHub Copilot, and Claude to build features 3-5x faster than traditional development. You get the same quality code, delivered in a fraction of the time, at a fraction of the cost. Perfect for MVPs and rapid prototypes.",
-    deliverables: [
-      "Rapid MVP development in 3–5 days",
-      "AI-assisted code generation and review",
-      "Full Next.js or React codebase",
-      "Clean, readable, documented code",
-      "Iteration cycles every 24 hours",
-      "Daily Loom video updates",
-      "GitHub repo with full commit history",
-      "Free 2-week iteration window post-launch",
-    ],
-    useCases: ["Startup MVPs", "Proof of Concepts", "Rapid Prototypes"],
-    techStack: [
-      { name: "Cursor AI", icon: "Brain" },
-      { name: "Next.js", icon: "Code" },
-      { name: "Claude", icon: "Cpu" },
-      { name: "GitHub Copilot", icon: "GitBranch" },
       { name: "Vercel", icon: "Cloud" },
-      { name: "TypeScript", icon: "Code" },
       { name: "Tailwind", icon: "Brush" },
-      { name: "GSAP", icon: "Zap" },
     ],
-    deliveryTime: "3–5 Business Days",
-    budget: "$300 – $2,000",
+    deliveryTime: "7–14 Business Days",
+    budget: "$1,000 – $6,000",
   },
   {
-    title: "SaaS Applications",
-    mainIcon: "Layers",
+    title: "AI Model Integration",
+    slug: "ai-model-integration",
+    mainIcon: "BrainCircuit",
+    tagline: "Bring LLMs and ML into your product",
+    description:
+      "We integrate large language models, embedding search, and vision models into your existing apps — with reliable prompt chains, retrieval (RAG), guardrails, and evaluation so the AI behaves predictably in production rather than hallucinating.",
+    deliverables: [
+      "LLM integration (OpenAI, Anthropic, or open-source)",
+      "Retrieval-Augmented Generation (RAG) pipelines",
+      "Vector database setup (Pinecone, pgvector, Qdrant)",
+      "Prompt engineering and evaluation harness",
+      "Streaming responses and function calling",
+      "Usage monitoring, logging, and cost controls",
+      "Fallback and moderation guardrails",
+      "30 days of post-launch support",
+    ],
+    useCases: ["Chat Assistants", "Search & RAG", "Content Automation"],
+    techStack: [
+      { name: "OpenAI", icon: "Brain" },
+      { name: "LangChain", icon: "Chain" },
+      { name: "Pinecone", icon: "Database" },
+      { name: "Python", icon: "Code" },
+      { name: "FastAPI", icon: "Zap" },
+      { name: "Next.js", icon: "Code" },
+      { name: "pgvector", icon: "Database" },
+      { name: "Redis", icon: "Database" },
+    ],
+    deliveryTime: "7–12 Business Days",
+    budget: "$1,500 – $8,000",
+  },
+  {
+    title: "AI Agent Creation",
+    slug: "ai-agent-creation",
+    mainIcon: "Bot",
+    tagline: "Autonomous agents that get work done",
+    description:
+      "We design and build custom AI agents that orchestrate multiple tools, APIs, and data sources to complete multi-step tasks — from customer support automation to back-office workflows — with human-in-the-loop checkpoints where it matters.",
+    deliverables: [
+      "Custom workflow agents tailored to your process",
+      "LLM / RAG integration for reasoning over your data",
+      "Automation pipelines connecting your SaaS tools",
+      "Multi-tool orchestration (email, CRM, DB, APIs)",
+      "Human approval steps and audit logging",
+      "Monitoring dashboards and error alerts",
+      "Ongoing agent tuning and monitoring",
+      "30 days of post-launch support",
+    ],
+    useCases: ["Support Automation", "Lead Qualification", "Ops Workflows"],
+    techStack: [
+      { name: "OpenAI", icon: "Brain" },
+      { name: "LangChain", icon: "Chain" },
+      { name: "Python", icon: "Code" },
+      { name: "Zapier", icon: "Zap" },
+      { name: "Twilio", icon: "MessageSquare" },
+      { name: "SendGrid", icon: "Mail" },
+      { name: "Node.js", icon: "Server" },
+      { name: "Next.js", icon: "Code" },
+    ],
+    deliveryTime: "10–18 Business Days",
+    budget: "$2,000 – $10,000",
+  },
+  {
+    title: "SaaS-Based Project Development",
+    slug: "saas-development",
+    mainIcon: "Cloud",
     tagline: "From idea to paying customers",
-    description: "We build complete Software-as-a-Service products from scratch — multi-tenant architecture, subscription billing, user dashboards, admin panels, and everything in between. We handle the entire product, so you can focus on growth and sales.",
+    description:
+      "We build complete Software-as-a-Service products — multi-tenant architecture, subscription billing, user and admin dashboards, and everything in between — so you can focus on growth while we handle the engineering.",
     deliverables: [
       "Multi-tenant SaaS architecture",
       "Stripe subscription billing integration",
-      "User authentication (email, Google, GitHub OAuth)",
-      "Customer dashboard + admin panel",
-      "Usage limits and plan-based feature gating",
-      "Email notifications with Resend or Nodemailer",
-      "Landing page + pricing page included",
-      "Analytics dashboard (Posthog or custom)",
+      "Email, Google, and GitHub OAuth authentication",
+      "Customer dashboard plus admin panel",
+      "Plan-based feature gating and usage limits",
+      "Email notifications (Resend or Nodemailer)",
+      "Landing and pricing pages included",
+      "Analytics dashboard (PostHog or custom)",
     ],
     useCases: ["B2B Tools", "Marketplaces", "Subscription Products"],
     techStack: [
@@ -258,27 +388,29 @@ export const servicesDetails = [
       { name: "Prisma", icon: "Database" },
       { name: "PostgreSQL", icon: "Database" },
       { name: "NextAuth", icon: "Shield" },
-      { name: "Resend", icon: "Mail" }, // Assuming Mail icon for Resend
-      { name: "Posthog", icon: "BarChart2" },
+      { name: "Resend", icon: "Mail" },
+      { name: "PostHog", icon: "BarChart2" },
       { name: "AWS S3", icon: "Cloud" },
     ],
-    deliveryTime: "10–21 Business Days",
-    budget: "$2,000 – $10,000",
+    deliveryTime: "14–28 Business Days",
+    budget: "$3,000 – $15,000",
   },
   {
     title: "WordPress Development",
-    mainIcon: "Layout",
-    tagline: "Professional WordPress sites that actually perform",
-    description: "Custom WordPress websites built with performance, SEO, and scalability in mind. We build from scratch using custom themes or premium page builders — no bloated templates. Every site is optimized for Core Web Vitals, fully responsive, and easy for you to manage.",
+    slug: "wordpress-development",
+    mainIcon: "LayoutTemplate",
+    tagline: "Websites that perform and are easy to manage",
+    description:
+      "Custom WordPress websites built with performance, SEO, and scalability in mind. We build from scratch using custom themes or premium page builders — no bloated templates — and optimize every site for Core Web Vitals.",
     deliverables: [
       "Custom WordPress theme or Elementor Pro build",
-      "WooCommerce setup if needed",
-      "On-page SEO optimization (Yoast or RankMath)",
-      "Page speed optimization (90+ Lighthouse score)",
-      "Contact forms, newsletters, and integrations",
+      "WooCommerce setup where needed",
+      "On-page SEO (Yoast or RankMath)",
+      "Page-speed optimization (90+ Lighthouse)",
+      "Forms, newsletters, and third-party integrations",
       "Hosting setup and migration",
-      "Training video for content management",
-      "30 days free maintenance",
+      "Content-management training video",
+      "30 days of free maintenance",
     ],
     useCases: ["Business Sites", "Blogs", "WooCommerce Stores"],
     techStack: [
@@ -291,22 +423,24 @@ export const servicesDetails = [
       { name: "Cloudflare", icon: "Cloud" },
       { name: "ACF", icon: "SquareStack" },
     ],
-    deliveryTime: "5–8 Business Days",
-    budget: "$400 – $3,000",
+    deliveryTime: "5–10 Business Days",
+    budget: "$500 – $4,000",
   },
   {
     title: "Shopify Development",
-    mainIcon: "ShoppingCart",
+    slug: "shopify-development",
+    mainIcon: "ShoppingBag",
     tagline: "E-commerce stores built to convert",
-    description: "Custom Shopify stores designed to maximize conversions and revenue. From custom theme development to complex app integrations, we build Shopify stores that look premium and sell. We handle everything from product setup to payment gateway configuration.",
+    description:
+      "Custom Shopify stores designed to maximize conversions and revenue. From custom theme development to complex app integrations, we build stores that look premium and sell — handling setup, payments, and shipping end to end.",
     deliverables: [
-      "Custom Shopify theme development or premium theme customization",
-      "Product catalog setup and collections",
+      "Custom theme or premium theme customization",
+      "Product catalog and collections setup",
       "Payment gateway and shipping configuration",
-      "Abandoned cart recovery setup",
-      "Shopify apps integration (reviews, upsells, loyalty)",
-      "Speed optimization for fast checkout",
-      "SEO setup for product and collection pages",
+      "Abandoned-cart recovery setup",
+      "Reviews, upsells, and loyalty app integrations",
+      "Checkout speed optimization",
+      "SEO for product and collection pages",
       "Mobile-first responsive design",
     ],
     useCases: ["D2C Brands", "Dropshipping", "Physical Products"],
@@ -314,222 +448,190 @@ export const servicesDetails = [
       { name: "Shopify", icon: "ShoppingCart" },
       { name: "Liquid", icon: "Code" },
       { name: "Dawn Theme", icon: "Layout" },
-      { name: "Klaviyo", icon: "Mail" }, // Assuming Mail icon for Klaviyo
-      { name: "Judge.me", icon: "Star" }, // Assuming Star icon for Judge.me
+      { name: "Klaviyo", icon: "Mail" },
+      { name: "Judge.me", icon: "Star" },
       { name: "Metafields", icon: "Database" },
       { name: "Shopify Apps", icon: "Package" },
       { name: "GA4", icon: "BarChart2" },
     ],
-    deliveryTime: "5–7 Business Days",
-    budget: "$500 – $4,000",
-  },
-  {
-    title: "UI/UX Design",
-    mainIcon: "Palette",
-    tagline: "Interfaces users love to use",
-    description: "Research-backed, pixel-perfect UI/UX design in Figma. We design complete product interfaces — from user flow mapping to high-fidelity prototypes — that are ready to hand off to any development team. Every design decision is backed by UX principles and conversion optimization best practices.",
-    deliverables: [
-      "User flow and information architecture mapping",
-      "Low-fidelity wireframes for all screens",
-      "High-fidelity UI design in Figma",
-      "Interactive prototype with all interactions",
-      "Design system: colors, typography, components",
-      "Mobile and desktop versions",
-      "Developer handoff with specs and assets",
-      "2 rounds of revisions included",
-    ],
-    useCases: ["App Redesigns", "New Product Design", "Landing Pages"],
-    techStack: [
-      { name: "Figma", icon: "Palette" },
-      { name: "FigJam", icon: "Palette" },
-      { name: "Framer", icon: "Aperture" },
-      { name: "Lottie", icon: "Zap" },
-      { name: "Adobe CC", icon: "Brush" },
-      { name: "Spline", icon: "SquareStack" },
-      { name: "Principle", icon: "Lightbulb" },
-      { name: "Zeplin", icon: "FileText" },
-    ],
-    deliveryTime: "4–7 Business Days",
-    budget: "$400 – $3,000",
-  },
-  {
-    title: "API & Backend",
-    mainIcon: "Server",
-    tagline: "The engine powering your product",
-    description: "Scalable, secure backend systems and APIs built with Node.js or Python. Whether you need a REST API for a mobile app, a microservices architecture for a scaling product, or a webhook integration system, we build backends that are fast, documented, and production-ready.",
-    deliverables: [
-      "REST API or GraphQL API design and development",
-      "Database design (SQL or NoSQL)",
-      "Authentication and authorization system",
-      "Third-party API integrations",
-      "Rate limiting, caching, and security hardening",
-      "Automated testing and CI/CD pipeline",
-      "Full API documentation (Postman or Swagger)",
-      "Docker containerization and cloud deployment",
-    ],
-    useCases: ["Mobile App Backends", "Microservices", "Integrations"],
-    techStack: [
-      { name: "Node.js", icon: "Server" },
-      { name: "Python", icon: "Code" },
-      { name: "FastAPI", icon: "Zap" },
-      { name: "PostgreSQL", icon: "Database" },
-      { name: "Redis", icon: "Database" },
-      { name: "Docker", icon: "Cloud" },
-      { name: "AWS", icon: "Cloud" },
-      { name: "Swagger", icon: "FileText" },
-    ],
-    deliveryTime: "5–12 Business Days",
+    deliveryTime: "5–9 Business Days",
     budget: "$600 – $5,000",
+  },
+  {
+    title: "Wix Studio Development",
+    slug: "wix-studio-development",
+    mainIcon: "PenTool",
+    tagline: "Design-led sites with studio-grade motion",
+    description:
+      "We craft Wix Studio websites with custom interactions, structured CMS collections, and smooth responsive layouts. Ideal for brands that want a polished, design-forward presence without compromising on performance or editability.",
+    deliverables: [
+      "Custom Wix Studio design system and layout",
+      "CMS collections for blogs, teams, and portfolios",
+      "Scroll and hover interactions with smooth motion",
+      "Responsive breakpoints for mobile and desktop",
+      "Third-party embeds and form integrations",
+      "On-page SEO and metadata configuration",
+      "Accessibility and focus-state pass",
+      "Editor training and 30 days support",
+    ],
+    useCases: ["Brand Sites", "Agencies", "Portfolios"],
+    techStack: [
+      { name: "Wix Studio", icon: "Layout" },
+      { name: "Wix CMS", icon: "FileText" },
+      { name: "Velo", icon: "Code" },
+      { name: "Figma", icon: "Palette" },
+      { name: "GSAP", icon: "Zap" },
+      { name: "Custom Fonts", icon: "Brush" },
+      { name: "Integrations", icon: "Network" },
+      { name: "SEO", icon: "TrendingUp" },
+    ],
+    deliveryTime: "5–9 Business Days",
+    budget: "$500 – $4,000",
   },
 ];
 
-export const pricingPlans = {
-  oneTime: [
-    {
-      name: "STARTER",
-      tagline: "Perfect for landing pages and simple sites",
-      price: 299,
-      features: [
-        "1 Page or Landing Page",
-        "Responsive Design (Mobile + Desktop)",
-        "Contact Form Integration",
-        "Basic SEO Setup",
-        "3 Revisions Included",
-        "Delivery in 3 Business Days",
-        "14 Days Post-Launch Support",
-      ],
-      buttonText: "Get Started →",
-      buttonVariant: "ghost",
-      popular: false,
-    },
-    {
-      name: "GROWTH",
-      tagline: "Best for startups and growing businesses",
-      price: 799,
-      features: [
-        "Up to 5 Pages",
-        "Custom Animations & Interactions",
-        "CMS Integration (Blog, Portfolio)",
-        "Google Analytics + SEO Setup",
-        "Contact Form → Google Sheets/Email",
-        "Performance Optimization (90+ Lighthouse)",
-        "5 Revisions Included",
-        "Delivery in 5–7 Business Days",
-        "30 Days Post-Launch Support",
-      ],
-      buttonText: "Get Started →",
-      buttonVariant: "ghost",
-      popular: true,
-    },
-    {
-      name: "SCALE",
-      tagline: "For serious products that need to perform",
-      price: 1999,
-      features: [
-        "Full Custom Web App or SaaS MVP",
-        "Authentication System (Login, Signup, OAuth)",
-        "Database Design + API Development",
-        "Payment Integration (Stripe)",
-        "Admin Dashboard",
-        "Advanced Animations (GSAP + Framer)",
-        "Unlimited Revisions",
-        "Delivery in 10–14 Business Days",
-        "60 Days Post-Launch Support",
-        "Source Code + Documentation",
-      ],
-      buttonText: "Get Started →",
-      buttonVariant: "filled",
-      popular: false,
-    },
-  ],
-  monthly: [
-    {
-      name: "BASIC",
-      tagline: "Ongoing development for small teams",
-      price: 499,
-      features: [
-        "Up to 20 Development Hours/Month",
-        "1 Active Project at a Time",
-        "Weekly Progress Updates",
-        "Bug Fixes and Maintenance",
-        "Priority Email Support",
-        "Cancel Anytime",
-      ],
-      buttonText: "Get Started →",
-      buttonVariant: "ghost",
-      popular: false,
-    },
-    {
-      name: "PRO",
-      tagline: "Your dedicated development partner",
-      price: 1299,
-      features: [
-        "Up to 60 Development Hours/Month",
-        "2 Active Projects Simultaneously",
-        "Daily Loom Video Updates",
-        "Dedicated Slack Channel",
-        "New Features + Bug Fixes",
-        "Monthly Strategy Call (1 hour)",
-        "Priority Turnaround (24–48hrs)",
-        "Cancel Anytime",
-      ],
-      buttonText: "Get Started →",
-      buttonVariant: "ghost",
-      popular: true,
-    },
-    {
-      name: "AGENCY",
-      tagline: "White-label development for agencies",
-      price: 2499,
-      features: [
-        "Unlimited Development Hours",
-        "Unlimited Active Projects",
-        "White-Label (your branding, our code)",
-        "NDA + IP Assignment Included",
-        "Dedicated Slack + Video Calls",
-        "Sub-contractor Agreement Available",
-        "48-Hour Delivery SLA",
-        "Cancel Anytime",
-      ],
-      buttonText: "Get Started →",
-      buttonVariant: "filled",
-      popular: false,
-    },
-  ],
-};
+export const pricingTiers = [
+  {
+    name: "Starter",
+    tagline: "For small businesses & MVPs",
+    price: 499,
+    priceNote: "one-time",
+    popular: false,
+    cta: { label: "Get Started", href: "/contact" },
+    features: [
+      "Up to 3 pages or a single landing page",
+      "Responsive design (mobile + desktop)",
+      "Contact form with email notification",
+      "Basic on-page SEO setup",
+      "3 rounds of revisions",
+      "Delivery in 3–5 business days",
+      "14 days post-launch support",
+    ],
+  },
+  {
+    name: "Growth",
+    tagline: "For scaling businesses",
+    price: 1499,
+    priceNote: "one-time",
+    popular: true,
+    cta: { label: "Get Started", href: "/contact" },
+    features: [
+      "Up to 8 pages or a custom web app",
+      "CMS (blog, portfolio, or listings)",
+      "Custom animations & interactions",
+      "Google Analytics + full SEO setup",
+      "Admin dashboard or client portal",
+      "5 rounds of revisions",
+      "Delivery in 7–12 business days",
+      "30 days post-launch support",
+      "Source code ownership included",
+    ],
+  },
+  {
+    name: "Enterprise",
+    tagline: "For large or custom projects",
+    price: "Custom" as const,
+    priceNote: "contact sales",
+    popular: false,
+    cta: { label: "Contact Sales", href: "/contact" },
+    features: [
+      "Full SaaS or multi-product platform",
+      "AI integration & agent automation",
+      "Dedicated infrastructure & DevOps",
+      "Unlimited revisions during build",
+      "Priority support & SLA",
+      "Custom security & compliance review",
+      "Team training & handover",
+      "60+ days post-launch support",
+    ],
+  },
+];
+
+export type PricingTier = (typeof pricingTiers)[number];
+
+export const pricingComparison: {
+  category: string;
+  rows: { label: string; values: [string | boolean, string | boolean, string | boolean] }[];
+}[] = [
+  {
+    category: "Development",
+    rows: [
+      { label: "Pages / scope", values: ["Up to 3", "Up to 8", "Unlimited"] },
+      { label: "Custom web app", values: [false, true, true] },
+      { label: "CMS integration", values: [false, true, true] },
+      { label: "Admin dashboard", values: [false, true, true] },
+      { label: "AI / agent features", values: [false, false, true] },
+    ],
+  },
+  {
+    category: "Design",
+    rows: [
+      { label: "Custom interactions", values: [false, true, true] },
+      { label: "Brand design system", values: [false, true, true] },
+      { label: "Animations (GSAP/Framer)", values: [false, true, true] },
+      { label: "Revisions", values: ["3 rounds", "5 rounds", "Unlimited"] },
+    ],
+  },
+  {
+    category: "Support & Maintenance",
+    rows: [
+      { label: "Post-launch support", values: ["14 days", "30 days", "60+ days"] },
+      { label: "Priority SLA", values: [false, false, true] },
+      { label: "Source code ownership", values: [true, true, true] },
+      { label: "Team training", values: [false, false, true] },
+    ],
+  },
+  {
+    category: "Ownership",
+    rows: [
+      { label: "Hosting / deployment help", values: [true, true, true] },
+      { label: "SEO setup", values: ["Basic", "Full", "Full + strategy"] },
+      { label: "NDA available", values: [true, true, true] },
+      { label: "Dedicated account lead", values: [false, false, true] },
+    ],
+  },
+];
 
 export const faqContent = [
   {
-    question: "How fast can you actually deliver?",
-    answer: "Most projects are delivered in 3–5 business days. Larger projects like SaaS applications or full web apps take 10–21 days. We'll give you an exact timeline before we start so there are never surprises.",
+    question: "How long does a typical project take?",
+    answer:
+      "Most websites and landing pages ship in 3–5 business days. Larger builds like SaaS platforms or full web apps take 10–28 days. We give you a fixed timeline before any work begins, so there are no surprises.",
   },
   {
-    question: "Do you work with international clients?",
-    answer: "Absolutely. We work with clients across the US, UK, UAE, Canada, and Australia. All communication is in English and we adjust our working hours to overlap with yours.",
+    question: "Do you offer ongoing support after launch?",
+    answer:
+      "Yes. Every plan includes post-launch support (14–60+ days depending on tier), and we offer monthly retainer options for ongoing feature work, bug fixes, and monitoring.",
   },
   {
-    question: "What happens if I'm not happy with the result?",
-    answer: "Every plan includes revisions. We iterate until you're satisfied. If for any reason you're truly unhappy within the first 7 days, we offer a full refund — no questions asked.",
+    question: "Can you work with our existing codebase?",
+    answer:
+      "Absolutely. We regularly join existing projects to fix bugs, add features, or redesign on top of your current code. Share the repo and we'll review it for free before quoting.",
   },
   {
-    question: "Will I own the code and design?",
-    answer: "100%. Once the project is complete and paid for, you own everything — the source code, design files, and all assets. We don't retain any rights.",
+    question: "Do I own the source code?",
+    answer:
+      "100%. Once a project is complete and paid for, you own everything — source code, design files, and assets. We don't retain any rights, and we hand over documentation.",
+  },
+  {
+    question: "What's included in AI Agent development?",
+    answer:
+      "Custom workflow agents, LLM/RAG integration, automation pipelines connecting your tools, multi-tool orchestration, human approval checkpoints, and ongoing monitoring. We scope the exact agent to your process.",
   },
   {
     question: "Do you sign NDAs?",
-    answer: "Yes, we sign NDAs for every project on request. Your idea and business information are completely confidential.",
+    answer:
+      "Yes — we sign NDAs on request for every project. Your idea, data, and business information stay completely confidential throughout the engagement.",
   },
   {
-    question: "Can you work with my existing codebase?",
-    answer: "Yes. We regularly jump into existing projects, fix bugs, add features, or do full redesigns on top of existing code. Just share the repo and we'll review it for free.",
+    question: "Which technologies do you build with?",
+    answer:
+      "Next.js, React, Node.js, and the MERN stack for web; OpenAI, Anthropic, and LangChain for AI; WordPress, Shopify, and Wix Studio for CMS/e-commerce. We choose the stack that fits your goals.",
   },
   {
-    question: "What do I need to provide to get started?",
-    answer: "Just tell us what you want to build. If you have a design, great. If not, we handle the design too. A brief description, your budget, and your timeline is all we need.",
-  },
-  {
-    question: "Do you provide hosting?",
-    answer: "We don't sell hosting but we set it up for you. We deploy to Vercel, Netlify, Railway, or your preferred host. We also help with domain and DNS configuration.",
+    question: "How does pricing work?",
+    answer:
+      "We use fixed, transparent pricing per tier (see the pricing table). Enterprise and custom scopes are quoted after a short discovery call. You always see the full price before we start.",
   },
 ];
 
@@ -567,16 +669,19 @@ export const techStackCategories = [
       { name: "Redis", icon: "Database" },
       { name: "Prisma", icon: "Database" },
       { name: "Supabase", icon: "Database" },
-      { name: "Firebase", icon: "Database" },
+      { name: "Pinecone", icon: "Database" },
     ],
   },
   {
-    category: "Mobile",
+    category: "AI & Integrations",
     techs: [
-      { name: "React Native", icon: "Smartphone" },
-      { name: "Expo", icon: "Smartphone" },
-      { name: "iOS", icon: "Smartphone" },
-      { name: "Android", icon: "Smartphone" },
+      { name: "OpenAI", icon: "Brain" },
+      { name: "Anthropic", icon: "Brain" },
+      { name: "LangChain", icon: "Chain" },
+      { name: "Stripe", icon: "DollarSign" },
+      { name: "Twilio", icon: "MessageSquare" },
+      { name: "SendGrid", icon: "Mail" },
+      { name: "Zapier", icon: "Zap" },
     ],
   },
   {
@@ -585,7 +690,7 @@ export const techStackCategories = [
       { name: "WordPress", icon: "Layout" },
       { name: "Shopify", icon: "ShoppingCart" },
       { name: "WooCommerce", icon: "ShoppingCart" },
-      { name: "Webflow", icon: "Layout" },
+      { name: "Wix Studio", icon: "Layout" },
       { name: "Sanity", icon: "FileText" },
       { name: "Contentful", icon: "FileText" },
     ],
@@ -599,19 +704,176 @@ export const techStackCategories = [
       { name: "Docker", icon: "Cloud" },
       { name: "GitHub Actions", icon: "GitBranch" },
       { name: "Cloudflare", icon: "Cloud" },
-      { name: "Nginx", icon: "Server" },
-    ],
-  },
-  {
-    category: "AI & Integrations",
-    techs: [
-      { name: "OpenAI", icon: "Brain" },
-      { name: "LangChain", icon: "Chain" }, // Assuming Chain icon
-      { name: "Stripe", icon: "DollarSign" },
-      { name: "Twilio", icon: "MessageSquare" }, // Assuming MessageSquare icon
-      { name: "SendGrid", icon: "Mail" },
-      { name: "Google APIs", icon: "Globe" },
-      { name: "Zapier", icon: "Zap" },
     ],
   },
 ];
+
+export const platformBreakdown = [
+  {
+    title: "Client-Facing Website / App",
+    description:
+      "The experience your customers see — fast, accessible, and conversion-focused, built mobile-first with your brand front and center.",
+    image: {
+      src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80&auto=format&fit=crop",
+      alt: "Person using a modern Stack Studio web application on a laptop",
+    },
+  },
+  {
+    title: "Admin Dashboard",
+    description:
+      "A secure control panel for your team: manage content, users, orders, and analytics from one clean interface.",
+    image: {
+      src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80&auto=format&fit=crop",
+      alt: "Stack Studio admin dashboard showing project metrics on a screen",
+    },
+  },
+  {
+    title: "API & Backend",
+    description:
+      "The engine behind the product — authenticated APIs, databases, automation, and integrations wired for scale.",
+    image: {
+      src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80&auto=format&fit=crop",
+      alt: "Backend server infrastructure powering Stack Studio APIs",
+    },
+  },
+  {
+    title: "Post-Launch Support Panel",
+    description:
+      "Monitoring, metrics, and update tooling so you can iterate confidently after launch with our team on standby.",
+    image: {
+      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80&auto=format&fit=crop",
+      alt: "Support team monitoring software performance on screens",
+    },
+  },
+];
+
+export const capabilities = [
+  {
+    title: "Full-Stack Engineering",
+    description:
+      "One team owns the frontend, backend, database, and infrastructure — so nothing falls through the cracks.",
+    image: {
+      src: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1200&q=80&auto=format&fit=crop",
+      alt: "Full-stack engineers building software on a workstation",
+    },
+  },
+  {
+    title: "AI & Automation",
+    description:
+      "Model integration, retrieval (RAG), and autonomous agents that remove repetitive work from your team.",
+    image: {
+      src: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80&auto=format&fit=crop",
+      alt: "AI network visualization representing intelligent automation",
+    },
+  },
+  {
+    title: "Cloud-Native Delivery",
+    description:
+      "We deploy on Vercel, AWS, and Railway with CI/CD, so releases are safe, fast, and reversible.",
+    image: {
+      src: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&q=80&auto=format&fit=crop",
+      alt: "Cloud infrastructure represented by a purple and blue gradient",
+    },
+  },
+  {
+    title: "Conversion-First Design",
+    description:
+      "Interfaces designed around outcomes — clarity, speed, and a flow that turns visitors into customers.",
+    image: {
+      src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80&auto=format&fit=crop",
+      alt: "Conversion-focused web application interface on a laptop",
+    },
+  },
+  {
+    title: "E-Commerce & CMS",
+    description:
+      "Shopify, WordPress, and Wix Studio builds that are easy for your team to run day to day.",
+    image: {
+      src: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=1200&q=80&auto=format&fit=crop",
+      alt: "E-commerce storefront on a tablet representing CMS and Shopify work",
+    },
+  },
+  {
+    title: "Ongoing Partnership",
+    description:
+      "Post-launch support, monitoring, and iterative improvements — we stay invested after launch.",
+    image: {
+      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80&auto=format&fit=crop",
+      alt: "Team collaborating on post-launch software support",
+    },
+  },
+];
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  category: string;
+  image: { src: string; alt: string };
+  body: string[];
+};
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "why-mern-stack-for-startups",
+    title: "Why the MERN Stack Is Still a Smart Choice for Startups in 2026",
+    excerpt:
+      "A practical look at why MongoDB, Express, React, and Node.js remain one of the fastest ways to ship a scalable product.",
+    date: "Aug 18, 2026",
+    readTime: "8 min read",
+    category: "Engineering",
+    image: {
+      src: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1200&q=80&auto=format&fit=crop",
+      alt: "Developer working on a MERN stack application",
+    },
+    body: [
+      "The MERN stack — MongoDB, Express, React, and Node.js — has been a go-to for startups for years, and for good reason. A single language (JavaScript/TypeScript) across the whole stack means smaller teams can move faster and onboard quicker.",
+      "React handles a responsive, component-driven frontend; Node and Express serve a clean API; and MongoDB gives you a flexible schema that evolves with your product. When you need real-time features, Socket.io slots in without a rewrite.",
+      "For most MVPs and mid-size products, MERN hits the sweet spot between speed, cost, and scalability. At Stack Studio we pair it with TypeScript, Prisma where helpful, and CI/CD so your first launch is production-grade.",
+    ],
+  },
+  {
+    slug: "building-ai-agents-that-work",
+    title: "Building AI Agents That Actually Do the Work",
+    excerpt:
+      "Autonomous agents are more than chatbots. Here is how we design agents that complete multi-step business tasks reliably.",
+    date: "Aug 12, 2026",
+    readTime: "10 min read",
+    category: "AI",
+    image: {
+      src: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80&auto=format&fit=crop",
+      alt: "Abstract visualization of an AI agent network",
+    },
+    body: [
+      "An AI agent is a system that can reason, call tools, and take actions toward a goal — not just answer questions. The difference matters: a support agent that triages tickets and drafts replies is far more valuable than a FAQ bot.",
+      "We build agents with retrieval (RAG) over your own data, tool calling for email, CRM, and database actions, and human-approval checkpoints for anything irreversible. Guardrails and logging keep behavior predictable.",
+      "The result is automation your team trusts: faster response times, fewer manual handoffs, and a system that improves as it runs.",
+    ],
+  },
+  {
+    slug: "saas-mvp-to-scale",
+    title: "From MVP to Scale: Architecting a SaaS Product the Right Way",
+    excerpt:
+      "Multi-tenancy, billing, and dashboards from day one — a field guide to building SaaS that grows with you.",
+    date: "Aug 5, 2026",
+    readTime: "12 min read",
+    category: "SaaS",
+    image: {
+      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop",
+      alt: "SaaS analytics dashboard on a laptop screen",
+    },
+    body: [
+      "Shipping a SaaS MVP is easy; shipping one that scales is the hard part. We start with multi-tenant architecture, Stripe subscriptions, and role-based access so you are not rebuilding the foundation later.",
+      "A clean customer dashboard plus an admin panel means you can operate the business from launch, and plan-based feature gating lets you monetize tiers without code changes.",
+      "Stack Studio builds SaaS products end to end — from the first landing page to the analytics that tell you what to build next.",
+    ],
+  },
+];
+
+export type ServiceDetail = (typeof servicesDetails)[number];
+
+export function getServiceBySlug(slug: string): ServiceDetail | undefined {
+  return servicesDetails.find((s) => s.slug === slug);
+}

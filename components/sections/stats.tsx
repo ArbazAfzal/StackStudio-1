@@ -48,7 +48,7 @@ function Counter({
 
 export function StatsSection() {
   return (
-    <section className="border-y border-white/10 bg-[#0a0a0a] px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-32">
+    <section className="border-y border-border bg-bg-secondary px-4 sm:px-6 md:px-8 lg:px-12 py-8 md:py-10 lg:py-12">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 lg:grid-cols-4 md:gap-0">
         {stats.map((stat, i) => (
           <motion.div
@@ -61,10 +61,10 @@ export function StatsSection() {
             transition={{ delay: i * 0.1 }}
           >
             {i > 0 && (
-              <div className="absolute top-1/2 left-0 hidden h-16 w-px -translate-y-1/2 bg-white/10 md:block" />
+              <div className="absolute top-1/2 left-0 hidden h-16 w-px -translate-y-1/2 bg-border md:block" />
             )}
             <Counter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
-            <p className="mt-3 text-sm text-[#888888]">{stat.label}</p>
+            <p className="mt-3 text-sm text-muted">{stat.label}</p>
           </motion.div>
         ))}
       </div>

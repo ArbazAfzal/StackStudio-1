@@ -1,15 +1,16 @@
 import { HeroSection } from "@/components/sections/hero";
-import { MarqueeSection } from "@/components/sections/marquee";
-import { ServicesSection } from "@/components/sections/services";
+import { TechMarquee } from "@/components/sections/tech-marquee";
 import { StatsSection } from "@/components/sections/stats";
-import { ProcessSection } from "@/components/sections/process";
-import { PortfolioSection } from "@/components/sections/portfolio";
-import { WhyUsSection } from "@/components/sections/why-us";
+import { ServicesSection } from "@/components/sections/services";
 import { ServicesDetailSection } from "@/components/sections/services-detail";
+import { ProcessSection } from "@/components/sections/process";
+import { PlatformsSection } from "@/components/sections/platforms";
+import { WhyUsSection } from "@/components/sections/why-us";
+import { PortfolioSection } from "@/components/sections/portfolio";
 import { PricingPlansSection } from "@/components/sections/pricing-plans";
-import { FAQSection } from "@/components/sections/faq";
-import { TechStackShowcaseSection } from "@/components/sections/tech-stack-showcase";
 import { TestimonialsSection } from "@/components/sections/testimonials";
+import { FAQSection } from "@/components/sections/faq";
+import { CtaBand } from "@/components/sections/cta-band";
 import { ContactSection } from "@/components/sections/contact";
 import { Footer } from "@/components/layout/footer";
 
@@ -17,17 +18,18 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <MarqueeSection />
-      <TechStackShowcaseSection /> {/* NEW (Section D) */}
-      <ServicesSection />
-      <ServicesDetailSection /> {/* NEW (Section A) */}
+      <TechMarquee />
       <StatsSection />
-      <PortfolioSection />
+      <ServicesSection />
+      <ServicesDetailSection />
       <ProcessSection />
+      <PlatformsSection />
       <WhyUsSection />
-      <PricingPlansSection /> {/* NEW (Section B) */}
-      <FAQSection /> {/* NEW (Section C) */}
+      <PortfolioSection />
+      <PricingPlansSection />
       <TestimonialsSection />
+      <FAQSection />
+      <CtaBand />
       <ContactSection />
       <Footer />
     </main>

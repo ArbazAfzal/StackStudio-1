@@ -15,70 +15,70 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "novapay-fintech",
-    title: "NovaPay Fintech",
-    category: "Fintech",
+    slug: "atlas-saas-dashboard",
+    title: "Atlas SaaS Dashboard",
+    category: "SaaS",
     year: "2025",
     description:
-      "A modern payment platform enabling businesses to accept, manage, and reconcile transactions in real time with a seamless merchant dashboard.",
+      "A multi-tenant analytics dashboard that turns raw product events into clear, actionable insights for non-technical operators.",
     challenge:
-      "The client needed a secure, scalable payment infrastructure that could handle high transaction volumes while maintaining sub-second response times.",
+      "The client needed a scalable SaaS frontend with role-based access, real-time charts, and a billing flow — without a large in-house engineering team.",
     solution:
-      "We built a Next.js frontend with a Node.js API layer, integrated Stripe for payments, and implemented real-time webhooks for instant reconciliation.",
-    tech: ["Next.js", "Node.js", "Stripe"],
-    tags: ["Next.js", "Node.js", "Stripe"],
-    gradient: "from-[#1a1a1a] via-[#0d1a00] to-[#000000]",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&h=800&fit=crop&q=80",
-  },
-  {
-    slug: "pulse-health-app",
-    title: "Pulse Health App",
-    category: "Healthcare",
-    year: "2025",
-    description:
-      "A cross-platform health tracking app that helps users monitor vitals, schedule appointments, and connect with care providers on the go.",
-    challenge:
-      "Delivering a consistent native experience on both iOS and Android while syncing health data reliably across devices.",
-    solution:
-      "We developed a React Native app with Firebase backend, offline-first architecture, and HIPAA-conscious data handling patterns.",
-    tech: ["React Native", "Firebase"],
-    tags: ["React Native", "Firebase"],
-    gradient: "from-[#111111] via-[#1a1500] to-[#000000]",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=800&fit=crop&q=80",
-  },
-  {
-    slug: "vertex-ai-dashboard",
-    title: "Vertex AI Dashboard",
-    category: "AI / SaaS",
-    year: "2024",
-    description:
-      "An intelligent analytics dashboard that surfaces AI-driven insights, automates reporting, and helps teams make data-backed decisions faster.",
-    challenge:
-      "Integrating multiple AI models into a unified interface without sacrificing performance or overwhelming non-technical users.",
-    solution:
-      "We designed a clean Next.js dashboard with OpenAI integrations, Python microservices for heavy processing, and progressive disclosure UX.",
-    tech: ["Next.js", "OpenAI", "Python"],
-    tags: ["Next.js", "OpenAI", "Python"],
-    gradient: "from-[#0a0a0a] via-[#0f1a0a] to-[#000000]",
+      "We built a Next.js + PostgreSQL platform with Stripe subscriptions, an admin panel, and a clean analytics UI, shipped in under three weeks.",
+    tech: ["Next.js", "PostgreSQL", "Stripe", "Tailwind"],
+    tags: ["Next.js", "SaaS", "Stripe"],
+    gradient: "from-[#1b1740] via-[#120f2e] to-[#0a0a0f]",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&q=80",
   },
   {
-    slug: "orbit-saas-platform",
-    title: "Orbit SaaS Platform",
-    category: "SaaS",
+    slug: "helix-ai-agent",
+    title: "Helix AI Agent",
+    category: "AI",
+    year: "2025",
+    description:
+      "An autonomous support agent that triages tickets, drafts replies, and triggers workflows across the client's helpdesk and CRM.",
+    challenge:
+      "Support volume was overwhelming the team, and existing chatbots gave generic, unhelpful answers that hurt customer trust.",
+    solution:
+      "We built a retrieval-augmented agent on OpenAI and LangChain with human-approval checkpoints, integrated via the client's APIs and Slack.",
+    tech: ["Next.js", "OpenAI", "LangChain", "Python"],
+    tags: ["AI Agent", "LangChain", "RAG"],
+    gradient: "from-[#0c2a3a] via-[#0f1f33] to-[#0a0a0f]",
+    image:
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&h=800&fit=crop&q=80",
+  },
+  {
+    slug: "lumen-shopify-store",
+    title: "Lumen Shopify Store",
+    category: "E-Commerce",
     year: "2024",
     description:
-      "A full-stack SaaS platform for team collaboration, project management, and workflow automation built to scale from startup to enterprise.",
+      "A conversion-focused Shopify storefront for a D2C skincare brand, with custom theme sections and a streamlined checkout.",
     challenge:
-      "Creating a multi-tenant architecture that supports thousands of concurrent users with role-based access and real-time collaboration.",
+      "The legacy store had a high bounce rate on mobile and a confusing checkout that was costing the brand sales.",
     solution:
-      "We engineered a Next.js app with PostgreSQL, AWS infrastructure, and granular permission systems with audit logging.",
-    tech: ["Next.js", "PostgreSQL", "AWS"],
-    tags: ["Next.js", "PostgreSQL", "AWS"],
-    gradient: "from-[#111111] via-[#151500] to-[#000000]",
+      "We rebuilt the theme in Liquid with a mobile-first layout, added reviews and upsell apps, and optimized Core Web Vitals above 95.",
+    tech: ["Shopify", "Liquid", "Klaviyo"],
+    tags: ["Shopify", "D2C", "CRO"],
+    gradient: "from-[#241a4a] via-[#161232] to-[#0a0a0f]",
+    image:
+      "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=1200&h=800&fit=crop&q=80",
+  },
+  {
+    slug: "forge-mern-marketplace",
+    title: "Forge MERN Marketplace",
+    category: "Marketplace",
+    year: "2024",
+    description:
+      "A two-sided MERN marketplace connecting local service providers with customers, with real-time messaging and payments.",
+    challenge:
+      "The founder needed a working marketplace MVP quickly to validate demand before raising a seed round.",
+    solution:
+      "We delivered a MongoDB, Express, React, and Node.js app with Socket.io chat, Stripe Connect payouts, and an admin moderation panel.",
+    tech: ["React", "Node.js", "MongoDB", "Socket.io"],
+    tags: ["MERN", "Marketplace", "Realtime"],
+    gradient: "from-[#1a1740] via-[#131133] to-[#0a0a0f]",
     image:
       "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=800&fit=crop&q=80",
   },
