@@ -36,6 +36,25 @@ npm run start    # production server
 npm run lint     # ESLint
 ```
 
+## Cloudflare deployment
+
+The workflow in `.github/workflows/deploy-cloudflare.yml` builds this Next.js app with OpenNext and deploys it to Cloudflare Workers whenever changes are pushed to `main`.
+
+Add these repository or `production` environment secrets in GitHub:
+
+- `CLOUDFLARE_API_TOKEN` - an API token with Workers Scripts Edit permission
+- `CLOUDFLARE_ACCOUNT_ID` - the Cloudflare account ID that owns the Worker
+
+The contact form also needs its Google Sheets variables configured as Worker secrets or variables in Cloudflare:
+
+```text
+GOOGLE_SHEET_ID
+GOOGLE_SERVICE_ACCOUNT_EMAIL
+GOOGLE_PRIVATE_KEY
+```
+
+Change the Worker name in `wrangler.jsonc` if `stack-studio` is already used in your Cloudflare account.
+
 ## Tech stack
 
 - Next.js 15 App Router
